@@ -1,12 +1,14 @@
-function Navigation() {
+import { NavLink } from "react-router-dom";
+
+const Navigation = () => {
   return (
     <div className="navigation">
-      <a href="/home" className="nav-active">
+      <NavLink to="/" className="nav-active">
         Accueil
-      </a>
-      <a href="/a-propos" className="nav-active">
+      </NavLink>
+      <NavLink to="/a-propos" className="nav-active">
         A Propos
-      </a>
+      </NavLink>
     </div>
   );
 }

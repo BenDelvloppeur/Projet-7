@@ -1,11 +1,12 @@
-import React from "react";
-import Footer from "../Footer";
-import Header from "../header/Header";
+import bannerImg from "./../../assets/banner-about.png";
+import Banner from "../Banner";
+import Small from "../accordeon/Small";
 
-export default function About() {
+const About = () => {
   return (
-    <div>
-      <Header />, <Footer />
-    </div>
+    <>
+      <Banner urlImage={bannerImg} /> <Small />
+    </>
   );
-}
+};
+export default About;

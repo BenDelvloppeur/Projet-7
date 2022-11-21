@@ -1,7 +1,7 @@
 import logoFooter from "../assets/logo-footer.png";
 import "../styles/_footer.scss";
 
-function Footer() {
+const Footer = () => {
   return (
     <footer id="footer">
       <div className="footer-div">

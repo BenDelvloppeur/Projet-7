@@ -1,12 +1,17 @@
-import Footer from "../Footer";
-import Header from "../header/Header";
-import BannerHome from "../home/Banner-Home";
+import bannerImg from "./../../assets/banner-home.png";
+// import styles from "./../../styles/header/_teste.module.scss";
 
-function Home() {
+import Banner from "../Banner";
+import CardsList from "../cards/CardsList";
+
+const Home = () => {
   return (
-    <div>
-      <Header />, <BannerHome />, <Footer />{" "}
-    </div>
+    <>
+      <Banner urlImage={bannerImg} text="Chez vous, partout et ailleurs" />
+      <main>
+        <CardsList />
+      </main>
+    </>
   );
 }
 
