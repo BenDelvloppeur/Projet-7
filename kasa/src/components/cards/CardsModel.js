@@ -1,15 +1,13 @@
-import { Link } from "react-router-dom";
-import "./../../styles/cards/_cards-details.scss";
+import "./../../styles/cards/_card-model.scss";
 
 const CardsModel = (props) => {
-  const { title, cover, id } = props;
+  const { title, image } = props;
   return (
-    <article className="card">
-      <Link to={id}>
-        <p>{title}</p>
-        <img src={cover} alt="" />
-      </Link>
-    </article>
+    <div className="card">
+      <img src={image} alt="" className="card__img" />
+      <div className="card__overlay"></div>
+      <h2 className="card__title">{title}</h2>
+    </div>
   );
 };
 export default CardsModel;

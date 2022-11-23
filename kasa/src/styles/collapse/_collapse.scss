@@ -1,0 +1,64 @@
+@import "./../declarations/variables";
+@import "./../declarations/mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  .aboutMainText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    .wrapper-about {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .accordeon {
+        cursor: pointer;
+        img {
+          transition: all 0.2s ease-in-out;
+        }
+        .description-text-accordeon {
+          background-color: $black;
+          color: $primary-color;
+          padding-right: 5px;
+          padding-left: 0;
+          display: flex;
+          flex-direction: column;
+          display: none;
+        }
+      }
+      .accordeon-open {
+        .p-background {
+          background-color: $light-grey;
+          padding: 24px 0px 16px 16px;
+        }
+        img {
+          transform: rotate(180deg);
+          transition: all 0.2s ease-in-out;
+        }
+        .description-text-accordeon {
+          display: contents;
+        }
+      }
+      .about-details {
+        background-color: $primary-color;
+        margin-top: 1%;
+        display: flex;
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 47px;
+        align-items: center;
+        border-radius: 5px;
+        justify-content: space-between;
+
+        p {
+          color: $white;
+        }
+      }
+    }
+  }
+}

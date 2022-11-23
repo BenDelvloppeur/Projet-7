@@ -1,47 +1,95 @@
+@import "./../declarations/variables";
+@import "./../declarations/mixins";
+
 .slider {
-  display: flex;
   position: relative;
-  overflow: hidden;
-  justify-content: center;
-  width: 100%;
-  margin-top: 1%;
-  margin-bottom: 5%;
-  .slider-window {
-    justify-content: center;
-    overflow: hidden;
-    width: 90%;
-    border-radius: 25px;
-    .arrow-right {
-      position: absolute;
-      top: 38%;
-      right: 7%;
-      height: 90px;
-      cursor: pointer;
-      color: white;
+
+  &__active-picture {
+    height: 255px;
+    width: 100%;
+    transform: scale(1);
+    transition: transform 300ms;
+    @include media-query(small) {
+      height: 295px;
     }
-    .arrow-left {
-      position: absolute;
-      top: 38%;
-      left: 7%;
-      height: 90px;
-      cursor: pointer;
-      color: white;
+    @include media-query(medium) {
+      height: 335px;
     }
-    p {
+    @include media-query(large) {
+      height: 375px;
+    }
+    @include media-query(xlarge) {
+      height: 415px;
+    }
+  }
+
+  &__inactive-picture {
+    transform: scale(1.05);
+    transition: transform 300ms;
+  }
+
+  &__picture {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 10px;
+    @include media-query(small) {
+      border-radius: 15px;
+    }
+    @include media-query(medium) {
+      border-radius: 20px;
+    }
+    @include media-query(large) {
+      border-radius: 25px;
+    }
+  }
+
+  &__previous,
+  &__next {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__next {
+    right: 0;
+  }
+
+  &__next-icon {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  &__prev-icon {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+
+  &__next-icon,
+  &__prev-icon {
+    height: 16px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+    @include media-query(small) {
+      height: 27px;
+    }
+    @include media-query(medium) {
+      height: 38px;
+    }
+    @include media-query(large) {
+      height: 50px;
+    }
+  }
+  &__counter {
+    display: none;
+    @include media-query(large) {
+      display: block;
+      color: $white;
       position: absolute;
+      bottom: 25px;
+      font-weight: 500;
       left: 50%;
-      bottom: 0%;
-      color: white;
-    }
-    .slider-derouler {
-      display: flex;
-      .image-slider {
-        height: 415px;
-        width: 100%;
-        border-radius: 25px;
-        object-fit: cover;
-        flex-shrink: 0;
-      }
+      filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
     }
   }
 }

@@ -1,16 +1,20 @@
+import { useState } from "react";
 import ArrowBot from "./../../assets/arrow-bot.png";
-import "./../../styles/accordeon/_small.scss";
-const SmallModel = (props) => {
+import "./../../styles/collapse/_collapse.scss";
+
+const Collapse = (props) => {
+  const [open, setOpen] = useState(false);
+
   const { title, description } = props;
   return (
     <div className="aboutMainText">
       <div className="wrapper-about">
-        <div className="accordeon">
-          <div className="about-details">
+        <div className={open ? "accordeon accordeon-open" : "accordeon"}>
+          <div className="about-details" onClick={() => setOpen(!open)}>
             <p>{title}</p>
             <img src={ArrowBot} alt="flèche dépliante" />
           </div>
-          <div>
+          <div className="p-background">
             <p className="description-text-accordeon">{description}</p>
           </div>
         </div>
@@ -19,4 +23,4 @@ const SmallModel = (props) => {
   );
 };
 
-export default SmallModel;
+export default Collapse;

@@ -1,44 +1,50 @@
 import "./../../styles/appartements/_slider.scss";
+import { useState } from "react";
+import arrowLeft from "./../../assets/arrow-left.png";
+import arrowRight from "./../../assets/arrow-right.png";
 
-const Slider = (props) => {
-  const { arrowRight, arrowLeft } = props;
+const Slider = ({ slides }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
   return (
-    <>
-      <div className="slider">
-        <div className="slider-window">
-          <img className="arrow-right" src={arrowRight} alt="Flèches Droite" />
-          <img className="arrow-left" src={arrowLeft} alt="Flèches Gauche" />
-          <p className="number-indicatif">1/5</p>
-          <div className="slider-derouler">
-            <img
-              className="image-slider"
-              src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
-              alt=""
-            />
-            <img
-              className="image-slider"
-              src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg"
-              alt=""
-            />
-            <img
-              className="image-slider"
-              src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg"
-              alt=""
-            />
-            <img
-              className="image-slider"
-              src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg"
-              alt=""
-            />
-            <img
-              className="image-slider"
-              src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
-              alt=""
-            />
+    <div className="slider">
+      {slides.map((picture, index) => {
+        return (
+          <div
+            key={index}
+            className={
+              index === current
+                ? "slide slider__active-picture"
+                : "slide slider__inactive-picture"
+            }
+          >
+            {index === current && (
+              <img src={picture} alt="" className="slider__picture" />
+            )}
           </div>
-        </div>
-      </div>
-    </>
+        );
+      })}
+      {length > 1 ? (
+        <>
+          <div className="slider__previous" onClick={prevSlide}>
+            <img src={arrowLeft} alt="" className="slider__prev-icon" />
+          </div>
+          <div className="slider__next" onClick={nextSlide}>
+            <img src={arrowRight} alt="" className="slider__next-icon" />
+          </div>
+        </>
+      ) : null}
+    </div>
   );
 };
+
 export default Slider;

@@ -5,13 +5,13 @@ const Banner = (props) => {
   const { urlImage, text } = props;
 
   return (
-    <div className="banner-img">
-      <img src={urlImage} alt="Bannière d'accueil" />
-      <div className="banner-slogan">
-        <p>{text}</p>
+    <div className="banner">
+      <img src={urlImage} alt="Bannière d'accueil" className="banner__img" />
+      <div className="banner__slogan">
+        <p className="banner__slogan__p">{text}</p>
       </div>
     </div>
   );
-}
+};
 
 export default Banner;

@@ -1,11 +1,11 @@
-import Home from "./pages/Home";
+import Home from "../Pages/Home";
 
-import About from "./pages/About";
+import About from "../Pages/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./header/Header";
+import Header from "./Header/Header";
 import Footer from "./Footer";
-import Error from "./error/Error";
-import Logements from "./pages/Logements";
+import Error from "../Pages/Error";
+import Logements from "../Pages/Logements";
 
 const App = () => {
   return (
@@ -14,12 +14,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/a-propos" element={<About />} />
+        <Route path="logements/:logementId" element={<Logements />} />
         <Route path="*" element={<Error />} />
-        <Route path="/logement/c67ab8a7" element={<Logements />} />
       </Routes>
       <Footer />
     </BrowserRouter>
   );
-}
+};
 
 export default App;

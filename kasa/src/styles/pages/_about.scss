@@ -1,0 +1,12 @@
+@import "./../declarations/variables";
+@import "./../declarations/mixins";
+
+.about {
+  margin: 0 12%;
+  @include media-query(small) {
+    margin: 0 4%;
+  }
+  @include media-query(medium) {
+    margin: 0 12%;
+  }
+}
