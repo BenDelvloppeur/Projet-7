@@ -8,7 +8,10 @@ const Rating = ({ rating }) => {
 
   return (
     <div className="rating">
+      {/* Boucle du tableau stars */}
       {stars.map((star) =>
+      // si Rating plus grand ou égale à la valeurs du tableau 
+      // stars alors étoile rouge sinon étoile grise.
         rating >= star ? (
           <img
             key={star.toString()}

@@ -1,6 +1,7 @@
 import "./../../styles/cards/_card-model.scss";
 
 const CardsModel = (props) => {
+  // Utilisation des props pour les contenus modifiable.
   const { title, image } = props;
   return (
     <div className="card">

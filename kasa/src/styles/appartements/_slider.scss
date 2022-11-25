@@ -80,7 +80,7 @@
       height: 50px;
     }
   }
-  &__counter {
+  &__number {
     display: none;
     @include media-query(large) {
       display: block;

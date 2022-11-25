@@ -30,10 +30,16 @@ const Slider = ({ slides }) => {
             {index === current && (
               <img src={picture} alt="" className="slider__picture" />
             )}
+            {/* Ajout du compteur de slide. */}
+            {index === current && (
+              <span className="slider__number">
+                {current + 1}/{length}
+              </span>
+            )}
           </div>
         );
       })}
-      {length > 1 ? (
+      {length > 1 ? ( //Affichage des flèches seulement si length > 1 (si plusieurs images)
         <>
           <div className="slider__previous" onClick={prevSlide}>
             <img src={arrowLeft} alt="" className="slider__prev-icon" />

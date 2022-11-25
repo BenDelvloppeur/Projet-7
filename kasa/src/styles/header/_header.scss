@@ -17,6 +17,7 @@
     margin-bottom: 1%;
     @include media-query(small) {
       margin-bottom: 5%;
+      margin-top: 3%;
     }
     @include media-query(medium) {
       margin-bottom: 0%;
@@ -43,7 +44,7 @@
         justify-content: flex-end;
         color: $primary-color;
         @include media-query(small) {
-          margin: 2.5% 0% 1% 2%;
+          margin: 3% 0% 1% 2%;
           font-size: 18px;
           width: 90px;
         }

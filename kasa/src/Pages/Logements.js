@@ -9,12 +9,15 @@ import Collapse from "./../components/Collapse/Collapse";
 import Server from "../components/Appartement/Server";
 
 const Logements = () => {
+  // UseParams pour l'url
   const { logementId } = useParams();
+  // Recherche de l'id dans la base de donnée puis vérification avec celle de l'url.
   const logement = logements.find((logement) => logement.id === logementId);
+  // Ensuite import des objets de la base de donné nécessaire.
   const { title, location, rating, host, equipments, description, pictures } =
     logement;
   return (
-    <>
+    <main>
       <div className="logements">
         <Slider slides={pictures} />
         <div className="logements__content">
@@ -23,6 +26,7 @@ const Logements = () => {
             <p className="logements__location">{location}</p>
             <div className="logements__tags">
               {logement.tags.map((tag, index) => (
+                // ajout du tag dans le props déclarer Tags.js
                 <Tags key={index} getTag={tag} />
               ))}
             </div>
@@ -44,7 +48,7 @@ const Logements = () => {
           />
         </div>
       </div>
-    </>
+    </main>
   );
 };
 

@@ -9,7 +9,9 @@ import Logements from "../Pages/Logements";
 
 const App = () => {
   return (
+    // Router
     <BrowserRouter>
+      {/* Layout */}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
