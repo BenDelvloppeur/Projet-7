@@ -7,7 +7,6 @@ const CardsModel = (props) => {
     <>
       <div className="card">
         <img src={image} alt="Couverture du logement" className="card__img" />
-        <div className="card__overlay"></div>
       </div>
       {/* :after modifié car "card prenais en compte le title." */}
       <div className="card__2">
