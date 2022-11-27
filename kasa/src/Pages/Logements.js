@@ -17,38 +17,36 @@ const Logements = () => {
   const { title, location, rating, host, equipments, description, pictures } =
     logement;
   return (
-    <main>
-      <div className="logements">
-        <Slider slides={pictures} />
-        <div className="logements__content">
-          <div className="logements__informations">
-            <h1 className="logements__title">{title}</h1>
-            <p className="logements__location">{location}</p>
-            <div className="logements__tags">
-              {logement.tags.map((tag, index) => (
-                // ajout du tag dans le props déclarer Tags.js
-                <Tags key={index} getTag={tag} />
-              ))}
-            </div>
-          </div>
-          <div className="logements__rating-and-host">
-            <Rating rating={rating} />
-            <Server host={host} />
+    <div className="logements">
+      <Slider slides={pictures} />
+      <div className="logements__content">
+        <div className="logements__informations">
+          <h1 className="logements__title">{title}</h1>
+          <p className="logements__location">{location}</p>
+          <div className="logements__tags">
+            {logement.tags.map((tag, index) => (
+              // ajout du tag dans le props déclarer Tags.js
+              <Tags key={index} getTag={tag} />
+            ))}
           </div>
         </div>
-        <div className="logements__dropdowns">
-          <Collapse title="Description" description={description} />
-          <Collapse
-            title="Equipement"
-            description={equipments.map((item) => (
-              <li key={item} className="logements__equipements">
-                {item}
-              </li>
-            ))}
-          />
+        <div className="logements__rating-and-host">
+          <Rating rating={rating} />
+          <Server host={host} />
         </div>
       </div>
-    </main>
+      <div className="logements__dropdowns">
+        <Collapse title="Description" description={description} />
+        <Collapse
+          title="Equipement"
+          description={equipments.map((item) => (
+            <li key={item} className="logements__equipements">
+              {item}
+            </li>
+          ))}
+        />
+      </div>
+    </div>
   );
 };
 

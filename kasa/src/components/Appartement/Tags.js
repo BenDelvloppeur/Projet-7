@@ -1,4 +1,5 @@
 import "./../../styles/appartements/_tags.scss";
+
 const Tags = ({ getTag }) => {
   return (
     <div className="tag">

@@ -13,12 +13,14 @@ const App = () => {
     <BrowserRouter>
       {/* Layout */}
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/a-propos" element={<About />} />
-        <Route path="logements/:logementId" element={<Logements />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/a-propos" element={<About />} />
+          <Route path="logements/:logementId" element={<Logements />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </main>
       <Footer />
     </BrowserRouter>
   );

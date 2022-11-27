@@ -3,10 +3,10 @@ import "../styles/_banner.scss";
 
 // Props pour changer seulement l'image du composant et le text si besoin.
 const Banner = (props) => {
-  const { urlImage, text } = props;
+  const { urlImage, text, customClass } = props;
 
   return (
-    <div className="banner">
+    <div className={`banner ${customClass}`}>
       <img src={urlImage} alt="Bannière d'accueil" className="banner__img" />
       <div className="banner__slogan">
         <p className="banner__slogan__p">{text}</p>

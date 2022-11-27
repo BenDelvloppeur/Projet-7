@@ -1,6 +1,16 @@
 @import "./../declarations/variables";
 @import "./../declarations/mixins";
 
+.class_test {
+  img {
+    @include media-query(small) {
+      height: 111px;
+    }
+    @include media-query(large) {
+      height: 223px;
+    }
+  }
+}
 .section {
   display: flex;
   flex-direction: row;

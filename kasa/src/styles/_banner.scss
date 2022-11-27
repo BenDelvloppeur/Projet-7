@@ -2,61 +2,49 @@
 @import "./declarations/mixins";
 
 .banner {
+  position: relative;
   display: flex;
   justify-content: center;
-  border-radius: 25px;
+  border-radius: 10px;
   margin-bottom: 5%;
 
   &__img {
-    border-radius: 25px;
+    border-radius: 10px;
     width: 92%;
     height: 223px;
     object-fit: cover;
     filter: brightness(0.8);
   }
   &__slogan {
-    width: 68%;
     color: $white;
     position: absolute;
-    top: 20%;
-    left: 10%;
-    right: 25%;
-    display: flex;
-    justify-content: flex-end;
-    text-align: start;
-    align-items: center;
-
+    align-self: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     @include media-query(small) {
-      top: 16%;
+      transform: translate(-85%, -50%);
     }
     @include media-query(medium) {
-      top: 17%;
+      transform: translate(-85%, -50%);
     }
     @include media-query(large) {
-      justify-content: flex-end;
-      top: 23%;
-    }
-    @include media-query(xlarge) {
-      justify-content: center;
-      top: 23%;
-    }
-    @include media-query(xxlarge) {
-      justify-content: center;
-      top: 28%;
+      transform: translate(-50%, -50%);
     }
     &__p {
       color: $white;
       font-weight: 500;
       font-size: 50px;
-      line-height: 33px;
+      line-height: 25px;
       @include media-query(small) {
-        font-size: 30px;
+        font-size: 22px;
       }
       @include media-query(medium) {
-        font-size: 40px;
+        font-size: 29px;
       }
       @include media-query(large) {
         font-size: 50px;
+        line-height: 55px;
       }
     }
   }

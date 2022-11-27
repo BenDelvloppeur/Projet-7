@@ -14,7 +14,7 @@ const Server = ({ host }) => {
         <p className="server__lastname">{lastname.trim()}</p>
       </div>
 
-      <img src={host.picture} alt="" className="server__picture" />
+      <img src={host.picture} alt="Profil de la personne" className="server__picture" />
     </div>
   );
 };
