@@ -18,7 +18,7 @@
   }
 }
 .card::after {
-  content: ""; // ::before and ::after both require content
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -38,30 +38,5 @@
 
     color: $white;
     box-sizing: inherit;
-  }
-}
-
-// &__overlay {
-//   position: absolute;
-//   top: 0;
-//   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
-//   height: 100%;
-//   width: 100%;
-//   border-radius: inherit;
-// }
-// &:hover {
-//   .card__overlay {
-//     transform: scale(1.01);
-//   }
-// }
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

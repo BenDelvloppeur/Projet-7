@@ -23,11 +23,6 @@
     }
   }
 
-  &__inactive-picture {
-    transform: scale(1.05);
-    transition: transform 300ms;
-  }
-
   &__picture {
     width: inherit;
     height: inherit;
