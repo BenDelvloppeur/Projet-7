@@ -2,7 +2,7 @@ import React from "react";
 import "./../../styles/appartements/_server.scss";
 
 const Server = ({ host }) => {
-  // .split qui permet de récupérer le nom et le prénom dans la même string
+  // .split qui permet de récupérer le nom et le prénom qui se trouve dans la même string pour en faire 2 string différente.
   const hostSplit = host.name.split(" ");
   const [name, lastname] = hostSplit;
 

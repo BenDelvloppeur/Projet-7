@@ -7,15 +7,21 @@ import Slider from "./../components/Appartement/Slider";
 import "./../styles/pages/_logements.scss";
 import Collapse from "./../components/Collapse/Collapse";
 import Server from "../components/Appartement/Server";
+import Error from "./Error";
 
 const Logements = () => {
   // UseParams pour l'url
   const { logementId } = useParams();
-  // Recherche de l'id dans la base de donnée puis vérification avec celle de l'url.
+  // Recherche de l'id dans la base de donnée puis modification avec celle de l'url.
   const logement = logements.find((logement) => logement.id === logementId);
+  // Utilisé de préférence useNavigate, problème de doc alors :
+  if (!logement) {
+    return <Error />;
+  }
   // Ensuite import des objets de la base de donné nécessaire.
   const { title, location, rating, host, equipments, description, pictures } =
     logement;
+
   return (
     <div className="logements">
       <Slider slides={pictures} />

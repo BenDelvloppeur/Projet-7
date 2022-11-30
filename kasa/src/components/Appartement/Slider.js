@@ -4,7 +4,7 @@ import arrowLeft from "./../../assets/arrow-left.png";
 import arrowRight from "./../../assets/arrow-right.png";
 
 const Slider = ({ slides }) => {
-  // définit l'état à 0 de current
+  // définit l'état à 0 de current 
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
